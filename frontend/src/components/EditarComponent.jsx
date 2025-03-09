@@ -1,13 +1,9 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addDonut } from "../core/redux/actions/donutActions";
-import { useNavigate } from "react-router-dom";
-import donutImage1 from '../images/pexels-tijana-drndarski-449691-3338681.jpg'
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
-const CrearDonutComponent = () => {
-  const dispatch = useDispatch();
+const EditarComponent = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
-
   const [form, setForm] = useState({
     name: "",
     description: "",
@@ -15,43 +11,39 @@ const CrearDonutComponent = () => {
     imageUrl: "",
   });
 
+  useEffect(() => {
+    fetch(`http://localhost:3000/api/donuts/${id}`)
+      .then((response) => response.json())
+      .then((data) => setForm(data))
+      .catch((error) => console.error("Error al obtener el donut:", error));
+  }, [id]);
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch("http://localhost:3000/api/donuts", {
-        method: "POST",
+      const response = await fetch(`http://localhost:3000/api/donuts/${id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(form),
       });
 
-      if (!response.ok) throw new Error("Error al guardar el donut");
+      if (!response.ok) throw new Error("Error al actualizar el donut");
 
-      const newDonut = await response.json();
-      dispatch(addDonut(newDonut)); 
-      setForm({ name: "", description: "", price: "", imageUrl: "" });
-      navigate("/listado"); 
+      navigate(`/detalle/${id}`); // 🔴 Redirige al detalle del donut actualizado
     } catch (error) {
-      console.error(error);
+      console.error("Error al actualizar el donut:", error);
     }
   };
 
-  const backHandler = () => {
-    navigate("/");
-  };
-
- 
-
   return (
     <div style={styles.container}>
-      <div><img src={donutImage1} alt="" style={{ width: '200px', height: 'auto', gap: '10', borderRadius: 20}}/></div>
-      <h2 style={styles.title}>Crear Nuevo Donut</h2>
+      <h2 style={styles.title}>Editar Donut</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <input
           type="text"
@@ -88,8 +80,8 @@ const CrearDonutComponent = () => {
           onChange={handleChange}
           style={styles.input}
         />
-        <button type="submit" style={styles.button} >Agregar Donut</button>
-        <button type="button" style={styles.backButton} onClick={backHandler}>Volver</button>
+        <button type="submit" style={styles.button}>Guardar Cambios</button>
+        <button type="button" style={styles.backButton} onClick={() => navigate(`/detalle/${id}`)}>Cancelar</button>
       </form>
     </div>
   );
@@ -99,7 +91,7 @@ const styles = {
   container: {
     maxWidth: "400px",
     margin: "40px auto",
-    padding: "60px",
+    padding: "20px",
     borderRadius: "8px",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
     backgroundColor: "#fff",
@@ -121,7 +113,7 @@ const styles = {
     border: "1px solid #ccc",
   },
   button: {
-    backgroundColor: "#ff4081",
+    backgroundColor: "#28a745",
     color: "white",
     padding: "10px",
     border: "none",
@@ -130,8 +122,8 @@ const styles = {
     marginTop: "10px",
   },
   backButton: {
-    backgroundColor: "black",
-    color: "white",
+    backgroundColor: "#ccc",
+    color: "black",
     padding: "10px",
     border: "none",
     borderRadius: "5px",
@@ -140,4 +132,4 @@ const styles = {
   },
 };
 
-export default CrearDonutComponent;
+export default EditarComponent;
