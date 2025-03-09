@@ -2,7 +2,7 @@
 # Donuts Store 🏪🍩
 
 **Autor:** Miriam Ibáñez Muñoz  
-**Descripción:** Proyecto de prueba final
+**Descripción:** Proyecto de prueba final React+JavaScript
 
 ## Tecnologías utilizadas 🚀  
 - **React** ⚛️  
@@ -13,7 +13,16 @@
 Una tienda de donuts donde se aplicarán conceptos de gestión de estado con Redux y estilos con CSS.  
 
 ---
-✨ ¡Vamos por esos donuts! 🍩  
+
+
+
+
+
+
+
+
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
