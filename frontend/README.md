@@ -1,16 +1,15 @@
 # React + Vite
-# Donuts Store 🏪🍩
+# Donuts Store 
 
 **Autor:** Miriam Ibáñez Muñoz  
-**Descripción:** Proyecto de prueba final React+JavaScript
+**Descripción:** Proyecto de prueba final módulo React+JavaScript Avanzado
 
-## Tecnologías utilizadas 🚀  
-- **React** ⚛️  
-- **Redux** 🛠️  
-- **CSS** 🎨  
+## Tecnologías utilizadas 
+- **React** 
+- **Redux** 
+-  
 
-## Funcionalidad  
-Una tienda de donuts donde se aplicarán conceptos de gestión de estado con Redux y estilos con CSS.  
+
 
 ---
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const DetalleComponent = () => {
-  const { id } = useParams(); // Obtiene el ID del donut desde la URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
   const [donut, setDonut] = useState(null);
 
@@ -17,24 +17,24 @@ const DetalleComponent = () => {
   const handleDelete = async () => {
     try {
       await fetch(`http://localhost:3000/api/donuts/${id}`, { method: "DELETE" });
-      navigate("/"); // 🔴 Redirige a HomePage después de eliminar
+      navigate("/listado"); 
     } catch (error) {
       console.error("Error al eliminar el donut:", error);
     }
   };
 
   const handleEdit = () => {
-    navigate(`/editar/${id}`); // 🔴 Lleva al formulario de edición
+    navigate(`/editar/${id}`); 
   };
 
   const handleBack = () => {
-    navigate("/"); // 🔴 Regresa a HomePage
+    navigate("/"); 
   };
 
   if (!donut) return <p>Cargando...</p>;
   return (
     <div style={styles.container}>
-    <h2 style={styles.title}>Donut: {donut.name}</h2>
+    <h2 style={styles.title}> {donut.name}</h2>
     <p style={styles.description}><strong>Descripción:</strong> {donut.description}</p>
     <p style={styles.price}><strong>Precio:</strong> €{donut.price}</p>
     <img src={donut.imageUrl || "https://via.placeholder.com/150"} alt={donut.name} style={styles.image} />
@@ -66,6 +66,7 @@ const styles = {
   description: {
     fontSize: "16px",
     marginBottom: "5px",
+    color: "grey",
   },
   price: {
     fontSize: "18px",

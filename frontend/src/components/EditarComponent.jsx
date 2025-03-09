@@ -35,7 +35,7 @@ const EditarComponent = () => {
 
       if (!response.ok) throw new Error("Error al actualizar el donut");
 
-      navigate(`/detalle/${id}`); // 🔴 Redirige al detalle del donut actualizado
+      navigate(`/detalle/${id}`); 
     } catch (error) {
       console.error("Error al actualizar el donut:", error);
     }
