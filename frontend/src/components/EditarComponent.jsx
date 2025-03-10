@@ -8,7 +8,7 @@ const EditarComponent = () => {
     name: "",
     description: "",
     price: "",
-    imageUrl: "",
+    // imageUrl: "",
   });
 
   useEffect(() => {
@@ -72,14 +72,14 @@ const EditarComponent = () => {
           style={styles.input}
           required
         />
-        <input
+        {/* <input
           type="text"
           name="imageUrl"
           placeholder="URL de la imagen"
           value={form.imageUrl}
           onChange={handleChange}
           style={styles.input}
-        />
+        /> */}
         <button type="submit" style={styles.button}>Guardar Cambios</button>
         <button type="button" style={styles.backButton} onClick={() => navigate(`/detalle/${id}`)}>Cancelar</button>
       </form>

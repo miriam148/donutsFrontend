@@ -28,7 +28,7 @@ const DetalleComponent = () => {
   };
 
   const handleBack = () => {
-    navigate("/"); 
+    navigate("/listado"); 
   };
 
   if (!donut) return <p>Cargando...</p>;

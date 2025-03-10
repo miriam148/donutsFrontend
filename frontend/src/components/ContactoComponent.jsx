@@ -13,7 +13,7 @@ const ContactoComponent = () => {
       <div><img src={donutImage2} style={{ width: '200px', height: 'auto', gap: '10', borderRadius: 20}} alt="Imagen de un donuts" /></div>
       <h1 style={styles.title}>Contacto</h1>
       
-      <p style={styles.text}><strong>Nombre:</strong> Bernal</p>
+      <p style={styles.text}><strong>Nombre:</strong> Pastelería Bernal</p>
       <p style={styles.text}><strong>Dirección:</strong> Calle Dulce nombre 8, Tarifa</p>
       <p style={styles.text}><strong>Teléfono:</strong> +34 600 88 77 33</p>
       <p style={styles.text}><strong>Email:</strong> chuparselosdeos@gmail.com</p>
