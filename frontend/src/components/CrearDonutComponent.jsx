@@ -80,14 +80,14 @@ const CrearDonutComponent = () => {
           style={styles.input}
           required
         />
-        <input
+        {/* <input
           type="text"
           name="imageUrl"
           placeholder="URL de la imagen"
           value={form.imageUrl}
           onChange={handleChange}
           style={styles.input}
-        />
+        /> */}
         <button type="submit" style={styles.button} >Agregar Donut</button>
         <button type="button" style={styles.backButton} onClick={backHandler}>Volver</button>
       </form>

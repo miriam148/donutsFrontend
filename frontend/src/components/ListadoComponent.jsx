@@ -33,11 +33,11 @@ const ListadoComponent = () => {
       <div style={styles.grid}>
         {donuts.map((donut) => (
           <div key={donut._id} style={styles.card}>
-            <img
-              src={donut.imageUrl || "https://via.placeholder.com/150"}
+            {/* <img
+              src={donut.imageUrl || "/images/elena-koycheva-PFzy4NO_R3M-unsplash.jpg"} //PROBANDO IMÁGENES 
               alt={donut.name}
               style={styles.image}
-            />
+            /> */}
             <h3 style={styles.donutName}>{donut.name}</h3>
             <p style={styles.description}>{donut.description}</p>
             <p style={styles.price}>€{donut.price}</p>
@@ -51,7 +51,7 @@ const ListadoComponent = () => {
         ))}
       </div>
     ) : (
-      <p style={styles.noDonutsMessage}> Nos hemos quedado sin existencias. ¡ crea tu propio Donut !</p>
+      <p style={styles.noDonuts}> Nos hemos quedado sin existencias. ¡ crea tu propio Donut !</p>
     )}
 
     <div>
@@ -79,7 +79,11 @@ const styles = {
     gap: "20px",
   },
   card: {
-    backgroundColor: "#fff",
+    backgroundImage: "url('/imageBack/pinkDonut.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    // backgroundColor: "#fff",
     padding: "15px",
     borderRadius: "10px",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
@@ -114,7 +118,7 @@ const styles = {
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
-    marginTop: "10px",
+    marginTop: "100px",
   },
   button1: {
     backgroundColor: "black",
@@ -125,7 +129,7 @@ const styles = {
     cursor: "pointer",
     marginTop: "10px",
   },
-  noDonutsMessage: {
+  noDonuts: {
     fontSize: "18px",
     color: "#888",
     textAlign: "center",

@@ -113,7 +113,7 @@ const styles = {
     border: "1px solid #ccc",
   },
   button: {
-    backgroundColor: "#28a745",
+    backgroundColor: "#ff4081",
     color: "white",
     padding: "10px",
     border: "none",
@@ -122,8 +122,8 @@ const styles = {
     marginTop: "10px",
   },
   backButton: {
-    backgroundColor: "#ccc",
-    color: "black",
+    backgroundColor: "black",
+    color: "white",
     padding: "10px",
     border: "none",
     borderRadius: "5px",

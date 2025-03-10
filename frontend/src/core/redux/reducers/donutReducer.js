@@ -4,14 +4,7 @@ const initialState = {
     donuts: [],
   };
   
-  // const donutReducer = (state = initialState, action) => {
-  //   switch (action.type) {
-  //     case "ADD_DONUT":
-  //       return { ...state, donuts: [...state.donuts, action.payload] };
-  //     default:
-  //       return state;
-  //   }
-  // };
+
   
   const donutReducer = (state = initialState, action) => {
     switch (action.type) {
