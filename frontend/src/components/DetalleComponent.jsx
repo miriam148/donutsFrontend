@@ -37,7 +37,7 @@ const DetalleComponent = () => {
     <h2 style={styles.title}> {donut.name}</h2>
     <p style={styles.description}><strong>Descripción:</strong> {donut.description}</p>
     <p style={styles.price}><strong>Precio:</strong> €{donut.price}</p>
-    <img src={donut.imageUrl || "https://via.placeholder.com/150"} alt={donut.name} style={styles.image} />
+    {/* <img src={donut.imageUrl || "https://via.placeholder.com/150"} alt={donut.name} style={styles.image} /> */}
     <div style={styles.buttonContainer}>
       <button style={styles.editButton} onClick={handleEdit}>Editar</button>
       <button style={styles.deleteButton} onClick={handleDelete}>Eliminar</button>
@@ -50,9 +50,13 @@ const DetalleComponent = () => {
 
 const styles = {
   container: {
+    backgroundImage: "url('/imageBack/pinkDonut.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
     maxWidth: "400px",
     margin: "40px auto",
-    padding: "20px",
+    padding: "80px",
     borderRadius: "8px",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
     backgroundColor: "#fff",
@@ -81,7 +85,7 @@ const styles = {
     borderRadius: "8px",
   },
   buttonContainer: {
-    marginTop: "15px",
+    marginTop: "200px",
     display: "flex",
     justifyContent: "space-around",
   },

@@ -31,7 +31,7 @@ const styles = {
     padding: "20px",
     borderRadius: "8px",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-    backgroundColor: "#fff",
+    backgroundColor: "#f4c2c2",
     textAlign: "center",
   },
   title: {
